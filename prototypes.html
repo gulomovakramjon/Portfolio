@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Landing page prototypes</title><meta name="theme-color" content="#12261f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#12261f;--teal:#3f8577;--sky:#d4ebf5;--bg:#f1f6f3;--sun:#e8964f;--e:cubic-bezier(.65,0,.35,1)}
+*{box-sizing:border-box;margin:0}body{font:400 1.05rem/1.6 Onest,sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2{font-family:Unbounded,sans-serif;line-height:1.15}a{color:inherit}
+.bar{position:fixed;top:12px;left:50%;translate:-50% 0;z-index:9;display:flex;align-items:center;gap:6px;padding:5px;border-radius:99px;background:#fffc;backdrop-filter:blur(12px);box-shadow:0 6px 30px #12261f22;font-size:.82rem;font-weight:500}
+.bar a,.bar button{padding:7px 12px;border-radius:99px;text-decoration:none;font:inherit;color:inherit}
+.lang{display:flex;border-left:1px solid #12261f33;padding-left:4px}.lang button{border:0;background:none;cursor:pointer;padding:7px 8px}.lang button[aria-pressed=true]{background:var(--sun)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+main{max-width:1120px;margin:auto;padding:110px 6vw 60px}
+h1{font-size:clamp(1.8rem,4.2vw,3rem);margin-bottom:14px}
+.note{border-left:5px solid var(--sun);background:#fff;border-radius:6px 18px 18px 6px;padding:16px 20px;margin:20px 0 10px;font-weight:500;max-width:70ch}
+.sub{opacity:.7;margin-bottom:44px}
+.win{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px #12261f22;margin-bottom:34px;animation:open 1.3s var(--e) both}
+.win:nth-of-type(2){animation-delay:.25s}
+@keyframes open{from{clip-path:inset(38% 28% 38% 28% round 60px);opacity:.3}to{clip-path:inset(0 0 0 0 round 20px)}}
+.tb{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#e3ede8}
+.dots{display:flex;gap:6px}.dots i{width:11px;height:11px;border-radius:50%;background:#12261f33}
+.url{flex:1;background:#fff;border-radius:99px;padding:4px 16px;font-size:.8rem;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{padding:4px 12px;border-radius:99px;background:var(--sun);font-size:.78rem;font-weight:600;white-space:nowrap}
+.win img{width:100%;display:block}
+.in{padding:22px 26px 26px}.in h2{font-size:1.15rem;margin-bottom:6px}.in p{max-width:70ch}
+@media(max-width:600px){.url{display:none}.tb{justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<header class="bar"><a href="index.html" data-i18n="bk"></a><div class="lang"><button data-l="uz">UZ</button><button data-l="ru">RU</button><button data-l="en">EN</button></div></header>
+<main><h1 data-i18n="t"></h1><p class="note" data-i18n="nt"></p><p class="sub" data-i18n="sb"></p>
+<article class="win"><div class="tb"><div class="dots"><i></i><i></i><i></i></div><div class="url" data-i18n="pt"></div><span class="st" data-i18n="st"></span></div>
+<img src="assets/radian-hero.webp" alt="Radian learning center landing page hero" loading="lazy"><div class="in"><h2 data-i18n="a1t"></h2><p data-i18n="a1d"></p></div></article>
+<article class="win"><div class="tb"><div class="dots"><i></i><i></i><i></i></div><div class="url" data-i18n="pt"></div><span class="st" data-i18n="st"></span></div>
+<img src="assets/registan-hero.webp" alt="Registan Shahriston learning center landing page hero" loading="lazy"><div class="in"><h2 data-i18n="a2t"></h2><p data-i18n="a2d"></p></div></article></main>
+<script>
+const T={uz:{bk:"← Bosh sahifa",t:"Landing sahifa prototiplari",nt:"Diqqat: bu sahifadagi loyihalar hozir ishlatilmaydi. Ular portfolio uchun konsept va prototiplar, faol saytlar emas.",sb:"Faqat bosh ekran (hero) ko'rsatilgan.",pt:"Prototip, jonli sayt emas",st:"Hozir ishlatilmaydi",a1t:"Radian o'quv markazi",a1d:"Chinobod (Andijon) o'quv markazi uchun landing sahifaning bosh ekrani: sarlavha, reyting belgisi va ikkita asosiy tugma.",a2t:"Registan | Shahriston o'quv markazi",a2d:"Toshkentdagi o'quv markazi uchun landing sahifaning bosh ekrani: sarlavha, qabul belgisi, tugmalar va asosiy ko'rsatkichlar."},
+ru:{bk:"← На главную",t:"Прототипы лендингов",nt:"Важно: проекты на этой странице сейчас не используются. Это концепты и прототипы для портфолио, а не работающие сайты.",sb:"Показан только первый экран (hero).",pt:"Прототип, не живой сайт",st:"Сейчас не используется",a1t:"Учебный центр Radian",a1d:"Первый экран лендинга для учебного центра в Чинабаде (Андижан): заголовок, значок рейтинга и две основные кнопки.",a2t:"Учебный центр Registan | Shahriston",a2d:"Первый экран лендинга для учебного центра в Ташкенте: заголовок, значок набора, кнопки и ключевые показатели."},
+en:{bk:"← Back home",t:"Landing page prototypes",nt:"Note: none of the projects on this page are currently in use. They are concepts and prototypes for my portfolio, not live sites.",sb:"Only the hero section is shown.",pt:"Prototype, not a live site",st:"Not in use",a1t:"Radian learning center",a1d:"The hero of a landing page for a learning center in Chinobod (Andijan): headline, rating badge and two main buttons.",a2t:"Registan | Shahriston learning center",a2d:"The hero of a landing page for a learning center in Tashkent: headline, admissions badge, buttons and key stats."}};
+const $$=s=>[...document.querySelectorAll(s)];
+function setLang(l){const f=()=>{document.documentElement.lang=l;$$('[data-i18n]').forEach(e=>e.textContent=T[l][e.dataset.i18n]);$$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l==l));document.title=T[l].t;try{localStorage.lang=l}catch(e){}};document.startViewTransition?document.startViewTransition(f):f()}
+$$('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+let s;try{s=localStorage.lang}catch(e){}
+setLang(s||(navigator.language.startsWith('ru')?'ru':navigator.language.startsWith('en')?'en':'uz'));
+</script></body></html>
